@@ -32,5 +32,8 @@ run-jupyter:
 	jupyter notebook examples/NBeats.ipynb
 
 test:
+	pip install pytest
+	pip install -r examples/examples-requirements.txt
 	cd examples && python trainer_keras.py --task dummy --test
 	cd examples && python trainer_pytorch.py --task dummy --test
+	pytest
